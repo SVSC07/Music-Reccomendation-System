@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎵</title>
+</head>
+<body>
+    <script>
+        // Simple favicon generator
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const ctx = canvas.getContext('2d');
+        
+        // Draw musical note emoji as favicon
+        ctx.font = '28px Arial';
+        ctx.fillText('🎵', 2, 24);
+        
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.href = canvas.toDataURL();
+        document.head.appendChild(link);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Music Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Hindi Music Recommender</h1>
+            <p>Discover similar songs based on AI-powered clustering</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="search-box">
+                    <input type="text" id="songInput" placeholder="Enter a Hindi song name..." autocomplete="off">
+                    <button id="recommendBtn">Get Recommendations</button>
+                </div>
+                
+                <div class="suggestions" id="suggestions"></div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Finding similar songs...</p>
+            </div>
+
+            <div class="results-section" id="results">
+                <h2>Recommended Songs</h2>
+                <div id="recommendationsList"></div>
+            </div>
+
+            <div class="dataset-info">
+                <h3>📊 Dataset Information</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <span class="info-label">Total Songs</span>
+                        <span class="info-value" id="totalSongs">Loading...</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-label">Clusters</span>
+                        <span class="info-value">4</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-label">Features</span>
+                        <span class="info-value">7</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Hindi Music Recommender | Powered by Machine Learning</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
