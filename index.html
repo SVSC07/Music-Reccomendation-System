@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Music Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Hindi Music Recommender</h1>
+            <p>Discover similar songs based on AI-powered clustering</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="search-box">
+                    <input type="text" id="songInput" placeholder="Enter a Hindi song name..." autocomplete="off">
+                    <button id="recommendBtn">Get Recommendations</button>
+                </div>
+                
+                <div class="suggestions" id="suggestions"></div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Finding similar songs...</p>
+            </div>
+
+            <div class="results-section" id="results">
+                <h2>Recommended Songs</h2>
+                <div id="recommendationsList"></div>
+            </div>
+
+            <!-- Player section: YouTube (search/embed) and Spotify (embed via track URL) -->
+            <div class="player-section" id="playerSection" style="margin-top: 1.25rem;">
+                <h2>Player</h2>
+                <div class="player-controls" style="display:flex;gap:.5rem;align-items:center;margin-bottom:.5rem;flex-wrap:wrap;">
+                    <input type="text" id="embedInput" placeholder="Paste Spotify track URL or type song to search YouTube" style="flex:1;min-width:220px;padding:.5rem;border-radius:6px;border:1px solid #ddd">
+                    <button id="playYoutubeBtn">Play YouTube (search)</button>
+                    <button id="playSpotifyBtn">Play Spotify (URL)</button>
+                </div>
+
+                <div class="player-tabs" style="width:100%;">
+                    <div class="player-frame youtube" style="width:100%;">
+                        <iframe id="youtubePlayer" width="100%" height="160" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="player-frame spotify" style="display:none;width:100%;margin-top:.5rem;">
+                        <iframe id="spotifyPlayer" width="100%" height="160" src="" frameborder="0" allow="encrypted-media; autoplay" allowtransparency="true"></iframe>
+                    </div>
+                </div>
+
+                <p class="player-note" style="color:#666;font-size:.9rem;margin-top:.5rem">Tip: For Spotify, paste a track URL like <code>https://open.spotify.com/track/{id}</code> or a URI like <code>spotify:track:{id}</code>. For YouTube you can paste a video URL or just type the song name and use search-based embed.</p>
+            </div>
+
+            <div class="dataset-info">
+                <h3>📊 Dataset Information</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <span class="info-label">Total Songs</span>
+                        <span class="info-value" id="totalSongs">Loading...</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-label">Clusters</span>
+                        <span class="info-value">4</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-label">Features</span>
+                        <span class="info-value">7</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Hindi Music Recommender | Powered by Machine Learning</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
